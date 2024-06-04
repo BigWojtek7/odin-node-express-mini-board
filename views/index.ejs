@@ -9,14 +9,17 @@
     <p>Welcome to <%= title %></p>
 
     <div class="content">
-      <% messages.forEach(ms => {%>
-        <div class="message">
-          <p><%=ms.user%></p>
-          <p><%=ms.text%></p>
-          <p><%=ms.added%></p>
-        </div>
-        <%});%>
-      
+      <div class="messages">
+        <% messages.forEach(ms => {%>
+          <div class="message">
+            <p><%=ms.user%></p>
+            <p><%=ms.text%></p>
+            <p><%=ms.added.toLocaleString()%></p>
+          </div>
+          <%});%>
+      </div>
+      <a href="/new">Add new message</a>
     </div>
+
   </body>
 </html>
